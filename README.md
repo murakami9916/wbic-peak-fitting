@@ -1,6 +1,6 @@
 # WBICによるピーク個数の推定
 
-## ~~Widely applicable~~ Watanabe Bayesian information criterion (WBIC)
+## ~~Widely applicable~~ Watanabe Bayesian Information Criterion; WBIC
 
 $$
 \begin{aligned}
