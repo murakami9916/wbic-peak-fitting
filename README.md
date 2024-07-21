@@ -1,5 +1,19 @@
 # WBICによるピーク個数の推定
 
+## ~~Widely applicable~~ Watanabe Bayesian information criterion (WBIC)
+
+$$
+\begin{aligned}
+  F_{WBIC} &= \frac{
+                \int{ \mathcal{L}(\Theta)P(\mathcal{D}|\Theta)^{\beta}P(\Theta)\mathrm{d}\Theta }
+              }{
+                \int{ P(\mathcal{D}|\Theta)^{\beta}P(\Theta)\mathrm{d}\Theta }
+              }\\
+  &= \mathbb{E}[\mathcal{L}(\Theta)]_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)},
+  \quad \text{where} \quad \beta^{-1} = \ln{N}
+\end{aligned}
+$$
+
 ## トイデータ
 
 ![image](https://github.com/user-attachments/assets/f6ed4c7e-ee1e-49ff-ac31-fb9f029c03d9)
