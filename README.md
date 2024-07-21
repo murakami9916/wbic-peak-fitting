@@ -12,5 +12,5 @@
 ### フィッティング結果
 ![image](https://github.com/user-attachments/assets/72f55425-ab75-4909-8799-19ec81765955)
 
-### ピーク個数で周辺化したピーク位置の分布
+### ピーク個数で周辺化したピーク位置の事後分布
 ![image](https://github.com/user-attachments/assets/eda36668-afb9-415f-aa40-406fd5233347)
