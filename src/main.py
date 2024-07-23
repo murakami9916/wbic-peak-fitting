@@ -1,6 +1,7 @@
 import os, sys
 import numpy as np
 import matplotlib.pyplot as plt
+import copy
 
 import jax
 import jax.numpy as jnp
@@ -43,7 +44,7 @@ N = len(x)
 
 K_t = 3
 h_t = jnp.array([500, 500, 300])
-p_t = jnp.array([-0.25, 0.0, 0.20])
+p_t = jnp.array([-0.25, 0.0, 0.21])
 w_t = jnp.array([0.1, 0.1, 0.1])
 b_t = 100
 
@@ -137,7 +138,12 @@ if __name__=="__main__":
     wbic_array = np.array([])
     bic_array = np.array([])
     for k in k_array:
-        log_likelihood = numpyro.infer.log_likelihood(model=model, posterior_samples=mcmc['H'][k].get_samples(), K=k, x=x, y=(T['H']*y))
+        # log_likelihood = numpyro.infer.log_likelihood(model=model, posterior_samples=mcmc['H'][k].get_samples(), K=k, x=x, y=(T['H']*y))
+        samples_H = copy.deepcopy( mcmc['H'][k].get_samples() )
+        samples_H['h'] = samples_H['h'] / beta
+        samples_H['peaks'] = samples_H['peaks'] / beta
+        samples_H['f'] = samples_H['f'] / beta
+        log_likelihood = numpyro.infer.log_likelihood(model=model, posterior_samples=samples_H, K=k, x=x, y=(T['L']*y))
         wbic = -1.0 * float( jnp.mean( np.sum(log_likelihood['y'], axis=1) ) )
         wbic_array = np.append(wbic_array, wbic)
         
@@ -159,8 +165,10 @@ if __name__=="__main__":
     plt.ylim(0, 100)
 
     ax2 = ax1.twinx()
-    ax2.plot(k_array, wbic_array, marker='o', color='b', markersize=8)
-    plt.ylabel('WBIC')
+    ax2.plot(k_array, bic_array, marker='o', color='c', markersize=6, label='BIC')
+    ax2.plot(k_array, wbic_array, marker='o', color='b', markersize=8, label='WBIC')
+    plt.legend(fontsize=14)
+    plt.ylabel('WBIC \ BIC')
     plt.savefig('image/wbic.jpg')
     plt.close('all')
 
