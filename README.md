@@ -16,15 +16,16 @@ $$
 
 ## トイデータ
 
-![image](https://github.com/user-attachments/assets/f6ed4c7e-ee1e-49ff-ac31-fb9f029c03d9)
+![data](https://github.com/user-attachments/assets/a00186c2-6fcf-485d-a5f5-f22ac95c0036)
 
 ## 計算実験
 
 ### WBICによるモデル選択
-![image](https://github.com/user-attachments/assets/4e642200-38d1-4e45-a222-f67b11d84ea8)
+
+![wbic](https://github.com/user-attachments/assets/eb90503b-a191-44aa-8391-85aaa0804259)
+
 
 ### フィッティング結果
-![image](https://github.com/user-attachments/assets/72f55425-ab75-4909-8799-19ec81765955)
 
-### ピーク個数で周辺化したピーク位置の事後分布
-![image](https://github.com/user-attachments/assets/eda36668-afb9-415f-aa40-406fd5233347)
+![fitting_L_003](https://github.com/user-attachments/assets/e6e0b702-80e8-414a-8872-2b17487993cb)![fitting_L_004](https://github.com/user-attachments/assets/5dea02cd-7bb1-4a72-8632-25e8a339ca3e)
+
