@@ -6,12 +6,12 @@
 $$
 \begin{aligned}
   F_{WBIC} &= \frac{
-                \int{ \mathcal{L}(\Theta)P(\mathcal{D}|\Theta)^{\beta}P(\Theta)\mathrm{d}\Theta }
+                \int{ n \mathcal{L}(\Theta)P(\mathcal{D}|\Theta)^{\beta}P(\Theta)\mathrm{d}\Theta }
               }{
                 \int{ P(\mathcal{D}|\Theta)^{\beta}P(\Theta)\mathrm{d}\Theta }
               }\\
-  &= \mathbb{E}[\mathcal{L}(\Theta)]_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)},
-  \quad \text{where} \quad \beta^{-1} = \ln{N}
+  &= \mathbb{E}[n \mathcal{L}(\Theta)]_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)},
+  \quad \text{where} \quad \beta^{-1} = \log{n}
 \end{aligned}
 $$
 
@@ -19,10 +19,51 @@ $$
 
 $$
 \begin{aligned}
-  F &\coloneqq - \ln{Z}\\
-    &= - \sum_{n=1}^{N}{\ln{P(y_n|\Theta_*)}} + \lambda \ln{N} - (m-1) \ln{\ln{N}} + \mathcal{O}_{P}(N^{-1})
+  F_n &= - \log{Z_n}\\
+    &= - \log{ \int{ \exp{\\{-n\mathcal{L}(\Theta)\\}p(\Theta)} \mathrm{d} \Theta } }\\
+    &= - n \mathcal{L}(\Theta_{*}) + \lambda \log{n} - (m-1) \log{\log{n}} + \mathcal{O}_{P}(n^{-1}).
 \end{aligned}
 $$
+
+ここで，逆温度$`\beta`$を導入する：
+
+$$
+\begin{aligned}
+  F_{n\beta} &= - \log{Z_{n\beta}}\\
+    &= - \log{ \int{ \exp{\\{- n \beta \mathcal{L}(\Theta)\\}p(\Theta)} \mathrm{d} \Theta } }\\
+    &= - n\beta \mathcal{L}(\Theta_{*}) + \lambda \log{n\beta} - (m-1) \log{\log{n\beta}} + \mathcal{O}_{P}((n\beta)^{-1}).
+\end{aligned}
+$$
+
+逆温度$`\beta`$の勾配を考えると：
+
+$$
+\begin{aligned}
+  \frac{\partial F_{n\beta}}{\partial \beta} = - n \mathcal{L}(\Theta_{*}) + \frac{\lambda}{\beta} + C
+\end{aligned}
+$$
+
+である．$`\beta^{-1} = \log{n}`$とおくと，
+
+$$
+  \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}} = - n \mathcal{L}(\Theta_{*}) + \lambda \log{n} + C
+$$
+
+つまり，
+
+$$
+  F_n \sim \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}}
+$$
+
+であり，WBICはこの値を計算している．
+
+$`\frac{\partial F_{n\beta}}{\partial \beta}`$は$`F_{n\beta}`$の対数を取ったあとの$`\beta`$の微分操作から：
+
+$$
+  \frac{\partial F_{n\beta}}{\partial \beta} = \mathbb{E}[n \mathcal{L}(\Theta)]_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)},
+$$
+
+で計算できる．
 
 ## トイデータ
 
