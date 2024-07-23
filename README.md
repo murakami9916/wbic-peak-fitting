@@ -1,6 +1,7 @@
 # WBICによるピーク個数の推定
 
 ## ~~Widely applicable~~ Watanabe Bayesian Information Criterion; WBIC
+観測データ$`\mathcal{D}`$が与えられたとき，WBICは下記の式で与えられる：
 
 $$
 \begin{aligned}
@@ -11,6 +12,15 @@ $$
               }\\
   &= \mathbb{E}[\mathcal{L}(\Theta)]_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)},
   \quad \text{where} \quad \beta^{-1} = \ln{N}
+\end{aligned}
+$$
+
+## ベイズ自由エネルギー
+
+$$
+\begin{aligned}
+  F &\coloneqq - \ln{Z}\\
+    &= - \sum_{n=1}^{N}{\ln{P(y_n|\Theta_*)}} + \lambda \ln{N} - (m-1) \ln{\ln{N}} + \mathcal{O}_{P}(N^{-1})
 \end{aligned}
 $$
 
