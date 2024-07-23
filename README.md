@@ -15,7 +15,8 @@ $$
 \end{aligned}
 $$
 
-## ベイズ自由エネルギー
+## ベイズ自由エネルギーとWBIC
+データ点数が$`n`$のデータ$`\mathcal{D}`$について，ベイズ自由エネルギーを考える．
 
 $$
 \begin{aligned}
@@ -52,7 +53,7 @@ $$
 つまり，
 
 $$
-  F_n \sim \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}}
+  F_n \approx \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}}
 $$
 
 であり，WBICはこの値を計算している．
