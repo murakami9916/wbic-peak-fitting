@@ -28,7 +28,10 @@ plt.rcParams['grid.linewidth'] = 1.0
 
 np.random.seed(333)
 
-colors = ['red', 'green', 'blue', 'magenta', 'cyan']
+colors = [
+    'red', 'green', 'blue',
+    'magenta', 'cyan', 'yellow', 'black'
+]
 
 numpyro.set_platform("cpu")
 numpyro.set_host_device_count(5)
@@ -44,7 +47,7 @@ N = len(x)
 
 K_t = 3
 h_t = jnp.array([500, 500, 300])
-p_t = jnp.array([-0.25, 0.0, 0.21])
+p_t = jnp.array([-0.25, 0.0, 0.20])
 w_t = jnp.array([0.1, 0.1, 0.1])
 b_t = 100
 
@@ -105,10 +108,10 @@ def do_annealing(k, beta, x, y):
 
 if __name__=="__main__":
     rng_key = jax.random.PRNGKey(123)
-    k_array = np.arange(2, 6)
+    k_array = np.arange(2, 7)
     T = { 'H' : beta, 'L' : 1.0 }
-    num_warmup = 5000
-    num_samples = 5000
+    num_warmup = 1000
+    num_samples = 1000
 
     mcmc = {'H' : {}, 'L' : {}}
     for k in k_array:
@@ -138,7 +141,6 @@ if __name__=="__main__":
     wbic_array = np.array([])
     bic_array = np.array([])
     for k in k_array:
-        # log_likelihood = numpyro.infer.log_likelihood(model=model, posterior_samples=mcmc['H'][k].get_samples(), K=k, x=x, y=(T['H']*y))
         samples_H = copy.deepcopy( mcmc['H'][k].get_samples() )
         samples_H['h'] = samples_H['h'] / beta
         samples_H['peaks'] = samples_H['peaks'] / beta
@@ -172,7 +174,6 @@ if __name__=="__main__":
     plt.savefig('image/wbic.jpg')
     plt.close('all')
 
-
     for k in k_array:
         plt.figure(figsize=(8, 6))
         key = 'L'
@@ -184,3 +185,4 @@ if __name__=="__main__":
         plt.xlabel('Energy')
         plt.ylabel('Frequency')
         plt.savefig(f'image/fitting_{key}_{k:03}.jpg')
+        plt.close('all')
