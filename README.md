@@ -22,7 +22,7 @@ $$
 $$
 
 ## ベイズ自由エネルギーとWBIC
-データ点数が$`n`$のデータ$`\mathcal{D}`$について，ベイズ自由エネルギーを考える．
+データ点数が$`n`$のデータ$`\mathcal{D}`$について，ベイズ自由エネルギー$`F_n`$を考える．
 
 $$
 \begin{aligned}
@@ -46,14 +46,14 @@ $$
 
 $$
 \begin{aligned}
-  \frac{\partial F_{n\beta}}{\partial \beta} = - n \mathcal{L}(\Theta_{*}) + \frac{\lambda}{\beta} + \mathcal{O}(\log{\log{n}}),
+  \frac{\partial F_{n\beta}}{\partial \beta} = - n \mathcal{L}(\Theta_{*}) + \frac{\lambda}{\beta} + \mathcal{O}(\sqrt{\log{n}}),
 \end{aligned}
 $$
 
 である．$`\beta^{-1} = \log{n}`$とおくと，
 
 $$
-  \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}} = - n \mathcal{L}(\Theta_{*}) + \lambda \log{n} + \mathcal{O}(\log{\log{n}}),
+  \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}} = - n \mathcal{L}(\Theta_{*}) + \lambda \log{n} + \mathcal{O}(\sqrt{\log{n}}),
 $$
 
 である．つまり，
