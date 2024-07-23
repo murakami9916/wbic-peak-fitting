@@ -46,17 +46,17 @@ $$
 
 $$
 \begin{aligned}
-  \frac{\partial F_{n\beta}}{\partial \beta} = - n \mathcal{L}(\Theta_{*}) + \frac{\lambda}{\beta} + \mathcal{O}(\log{\log{n}})
+  \frac{\partial F_{n\beta}}{\partial \beta} = - n \mathcal{L}(\Theta_{*}) + \frac{\lambda}{\beta} + \mathcal{O}(\log{\log{n}}),
 \end{aligned}
 $$
 
 である．$`\beta^{-1} = \log{n}`$とおくと，
 
 $$
-  \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}} = - n \mathcal{L}(\Theta_{*}) + \lambda \log{n} + \mathcal{O}(\log{\log{n}}).
+  \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}} = - n \mathcal{L}(\Theta_{*}) + \lambda \log{n} + \mathcal{O}(\log{\log{n}}),
 $$
 
-つまり，
+である．つまり，
 
 $$
   F_n \approx \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}}
