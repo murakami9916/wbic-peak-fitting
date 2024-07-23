@@ -1,7 +1,7 @@
 # WBICによるピーク個数の推定
 
 ## ~~Widely applicable~~ Watanabe Bayesian Information Criterion; WBIC
-観測データ$`\mathcal{D}`$が与えられたとき，WBICは下記の式で与えられる：
+観測データ$`\mathcal{D}=\{(x_i, y_i)\}_{i=1}^{n}`$が与えられたとき，WBICは下記の式で与えられる：
 
 $$
 \begin{aligned}
@@ -15,13 +15,19 @@ $$
 \end{aligned}
 $$
 
+ここで，$`\mathcal{L}(\Theta)`$はパラメータ$`\Theta`$における負の対数尤度である：
+
+$$
+  \mathcal{L}(\Theta) = - \frac{1}{n} \sum_{i=1}^{n}{ \log{ P(y_{i}|\Theta) } }
+$$
+
 ## ベイズ自由エネルギーとWBIC
 データ点数が$`n`$のデータ$`\mathcal{D}`$について，ベイズ自由エネルギーを考える．
 
 $$
 \begin{aligned}
   F_n &= - \log{Z_n}\\
-    &= - \log{ \int{ \exp{\\{-n\mathcal{L}(\Theta)\\}p(\Theta)} \mathrm{d} \Theta } }\\
+    &= - \log{ \int{ \exp{\\{-n\mathcal{L}(\Theta)\\}P(\Theta)} \mathrm{d} \Theta } }\\
     &= - n \mathcal{L}(\Theta_{*}) + \lambda \log{n} - (m-1) \log{\log{n}} + \mathcal{O}_{P}(n^{-1}).
 \end{aligned}
 $$
@@ -31,7 +37,7 @@ $$
 $$
 \begin{aligned}
   F_{n\beta} &= - \log{Z_{n\beta}}\\
-    &= - \log{ \int{ \exp{\\{- n \beta \mathcal{L}(\Theta)\\}p(\Theta)} \mathrm{d} \Theta } }\\
+    &= - \log{ \int{ \exp{\\{- n \beta \mathcal{L}(\Theta)\\}P(\Theta)} \mathrm{d} \Theta } }\\
     &= - n\beta \mathcal{L}(\Theta_{*}) + \lambda \log{n\beta} - (m-1) \log{\log{n\beta}} + \mathcal{O}_{P}((n\beta)^{-1}).
 \end{aligned}
 $$
