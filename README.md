@@ -36,17 +36,17 @@ $$
 
 $$
 \begin{aligned}
-  F_{n\beta} &= - \log{Z_{n\beta}}\\
+  F_{n}(\beta) &= - \log{Z_{n}(\beta)}\\
     &= - \log{ \int{ \exp{\\{- n \beta \mathcal{L}(\Theta)\\}P(\Theta)} \mathrm{d} \Theta } }\\
     &= - n\beta \mathcal{L}(\Theta_{*}) + \lambda \log{n\beta} - (m-1) \log{\log{n\beta}} + \mathcal{O}_{P}((n\beta)^{-1}).
 \end{aligned}
 $$
 
-逆温度$`\beta`$の勾配を考えると：
+逆温度$`\beta`$の偏微分$`F'_{n}(\beta)`$を考えると：
 
 $$
 \begin{aligned}
-  \frac{\partial F_{n\beta}}{\partial \beta} = - n \mathcal{L}(\Theta_{*}) + \frac{\lambda}{\beta} + \mathcal{O}(\sqrt{\log{n}}),
+  \frac{\partial F_{n}(\beta)}{\partial \beta} = - n \mathcal{L}(\Theta_{*}) + \frac{\lambda}{\beta} + \mathcal{O}(\sqrt{\log{n}}),
 \end{aligned}
 $$
 
@@ -64,7 +64,7 @@ $$
 
 であり，WBICはこの値を計算している．
 
-$`\frac{\partial F_{n\beta}}{\partial \beta}`$は$`F_{n\beta}`$の対数を取ったあとの$`\beta`$の微分操作から：
+逆温度での偏微分$`F'_{n}(\beta)`$は$`F_{n}(\beta)`$の対数を取ったあとの$`\beta`$の微分操作から：
 
 $$
   \frac{\partial F_{n\beta}}{\partial \beta} = \mathbb{E}[n \mathcal{L}(\Theta)]_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)},
