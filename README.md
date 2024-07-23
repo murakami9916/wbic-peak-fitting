@@ -40,14 +40,14 @@ $$
 
 $$
 \begin{aligned}
-  \frac{\partial F_{n\beta}}{\partial \beta} = - n \mathcal{L}(\Theta_{*}) + \frac{\lambda}{\beta} + C
+  \frac{\partial F_{n\beta}}{\partial \beta} = - n \mathcal{L}(\Theta_{*}) + \frac{\lambda}{\beta} + \mathcal{O}(\log{\log{n}})
 \end{aligned}
 $$
 
 である．$`\beta^{-1} = \log{n}`$とおくと，
 
 $$
-  \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}} = - n \mathcal{L}(\Theta_{*}) + \lambda \log{n} + C
+  \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}} = - n \mathcal{L}(\Theta_{*}) + \lambda \log{n} + \mathcal{O}(\log{\log{n}}).
 $$
 
 つまり，
