@@ -17,7 +17,7 @@ $$
               }{
                 \int{ P(\mathcal{D}|\Theta)^{\beta}P(\Theta)\mathrm{d}\Theta }
               }\\
-  &= \mathbb{E}[n \mathcal{L}(\Theta)]_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)},
+  &= \mathbb{E}_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)}[n \mathcal{L}(\Theta)],
   \quad \text{where} \quad \beta^{-1} = \log{n}
 \end{aligned}
 $$
@@ -80,7 +80,7 @@ $$
 逆温度での偏微分$`F'_{n}(\beta)`$は$`F_{n}(\beta)`$の対数を取ったあとの$`\beta`$の微分操作から：
 
 $$
-  \frac{\partial F_{n\beta}}{\partial \beta} = \mathbb{E}[n \mathcal{L}(\Theta)]_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)},
+  \frac{\partial F_{n\beta}}{\partial \beta} = \mathbb{E}_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)}[n \mathcal{L}(\Theta)],
 $$
 
 で計算できる．
