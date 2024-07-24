@@ -1,6 +1,11 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # WBICによるピーク個数の推定
 
 ## ~~Widely applicable~~ Watanabe Bayesian Information Criterion; WBIC
+統計力学では，周辺尤度に負の対数を作用させた値$`-\log{Z_n}`$をベイズ自由エネルギーとよぶ．
+ベイズ自由エネルギーは，観測データがどのモデルに従って発生したかを推定する，いわゆるモデル選択のために用いられる．
+(正則でないモデルにおいても）ベイズ自由エネルギーの近似値を導出できるのがWBICである．
 観測データ$`\mathcal{D}=\{(x_i, y_i)\}_{i=1}^{n}`$が与えられたとき，WBICは下記の式で与えられる：
 
 $$
