@@ -72,7 +72,7 @@ $$
 である．つまり，
 
 $$
-  F_n \approx \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}}
+  F_n \approx \left. \frac{\partial F_{n\beta}}{\partial \beta} \right|\_{\beta^{-1} = \log{n}} = F_{WBIC}
 $$
 
 であり，WBICはこの値を計算している．
