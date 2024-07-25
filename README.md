@@ -37,7 +37,7 @@ $$
 \begin{aligned}
   F_n &= - \log{Z_n}\\
     &= - \log{ \int{ \exp{\\{-n\mathcal{L}(\Theta)\\}P(\Theta)} \mathrm{d} \Theta } }\\
-    &= - n \mathcal{L}(\Theta_{*}) + \lambda \log{n} - (m-1) \log{\log{n}} + \mathcal{O}_{P}(n^{-1}).
+    &= n \mathcal{L}(\Theta_{*}) + \lambda \log{n} - (m-1) \log{\log{n}} + \mathcal{O}_{P}(n^{-1}).
 \end{aligned}
 $$
 
@@ -51,7 +51,7 @@ $$
 \begin{aligned}
   F_{n}(\beta) &= - \log{Z_{n}(\beta)}\\
     &= - \log{ \int{ \exp{\\{- n \beta \mathcal{L}(\Theta)\\}P(\Theta)} \mathrm{d} \Theta } }\\
-    &= - n\beta \mathcal{L}(\Theta_{*}) + \lambda \log{n\beta} - (m-1) \log{\log{n\beta}} + \mathcal{O}_{P}((n\beta)^{-1}).
+    &= n\beta \mathcal{L}(\Theta_{*}) + \lambda \log{n\beta} - (m-1) \log{\log{n\beta}} + \mathcal{O}_{P}((n\beta)^{-1}).
 \end{aligned}
 $$
 
