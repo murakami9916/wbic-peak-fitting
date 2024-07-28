@@ -2,7 +2,7 @@
 
 # WBICによるピーク個数の推定
 
-## ~~Widely applicable~~ Watanabe Bayesian Information Criterion; WBIC
+## ~~Watanabe~~ Widely applicable Bayesian Information Criterion; WBIC
 統計力学では，周辺尤度に負の対数を作用させた値$`-\log{Z_n}`$を自由エネルギーとよぶ．
 自由エネルギーは，観測データがどのモデルに従って発生したかを推定する，いわゆるモデル選択のために用いられる．
 しかしながら，自由エネルギーは統計力学の研究者が古くから計算を試みているが，計算が膨大であることが知られている．
