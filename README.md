@@ -4,7 +4,7 @@
 
 ## ~~Watanabe~~ Widely applicable Bayesian Information Criterion; WBIC
 統計力学では，周辺尤度に負の対数を作用させた値$`-\log{Z_n}`$を自由エネルギーとよぶ．
-自由エネルギーは，観測データがどのモデルに従って発生したかを推定する，いわゆるモデル選択のために用いられる．
+自由エネルギーは，観測データがどのモデルに従って発生したかを推定する，いわゆるモデル選択のために用いられる．これはピーク分離におけるピーク個数の推定に対応する．
 しかしながら，自由エネルギーは統計力学の研究者が古くから計算を試みているが，計算が膨大であることが知られている．
 (正則でないモデルにおいても）自由エネルギーの近似値を導出できるのがWBICである．
 
@@ -12,11 +12,7 @@
 
 $$
 \begin{aligned}
-  F_{WBIC} &= \frac{
-                \int{ n \mathcal{L}(\Theta)P(\mathcal{D}|\Theta)^{\beta}P(\Theta)\mathrm{d}\Theta }
-              }{
-                \int{ P(\mathcal{D}|\Theta)^{\beta}P(\Theta)\mathrm{d}\Theta }
-              }\\
+  F_{WBIC} &= \int{ n \mathcal{L}(\Theta)\left[\frac{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)}{\int{ P(\mathcal{D}|\Theta)^{\beta}P(\Theta)\mathrm{d}\Theta}}\right] \mathrm{d}\Theta }\\
   &= \mathbb{E}_{P(\mathcal{D}|\Theta)^{\beta}P(\Theta)}[n \mathcal{L}(\Theta)],
   \quad \text{where} \quad \beta^{-1} = \log{n}
 \end{aligned}
